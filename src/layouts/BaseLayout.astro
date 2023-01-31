@@ -12,17 +12,18 @@ const { pageTitle } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
   <body>
-    <Header />
-    <h1>{pageTitle}</h1>
-    <slot />
-    <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
+    <div class="min-h-[100vh] grid grid-rows-layout">
+      <Header />
+      <div>
+        <!-- <h1>{pageTitle}</h1> -->
+        <slot />
+      </div>
+      <Footer />
+    </div>
   </body>
 </html>
